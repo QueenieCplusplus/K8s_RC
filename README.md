@@ -6,5 +6,24 @@ Replication Controller &amp; Controller Manager
 # Replica 示意圖
 
 
+           etcd (log) 
+                    
+                 |
+                 |
+                _|______________                   
+               |                |----- get ---  __ Node___               _ anotherNode_ 
+               | Core API (Auth)|----- list --- |Kuberlet|---k8sProxy---|   Kuberlet   |
+               |________________|               ----------               --------------
+                   |           |
+                   |           |
+                   |           |
+                   |           
+                   |       Resorces Controll (cotains Node Controller, Replication Controller)
+                   |
+                   |
+                       
+              Event Listener (by Scheduler)
+
+
 
 
